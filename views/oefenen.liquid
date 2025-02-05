@@ -1,0 +1,11 @@
+
+<h1> {{ person.name }} </h1>
+<p> Het is vandaag {{ 'now' | date: "%Y-%m-%d %H:%M" }} </p>
+
+<p> Ik ben geboren op {{ person.birthdate }} </p>
+
+
+<details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
+
+<h2> Custom data </h2>
+<p> {{ person.custom.favorite-song }} </p>
