@@ -1,19 +1,37 @@
 {% render 'partials/head.liquid' %}
 
     <article>
-        <div> {{ person.custom.svg }} </div>
-        <img src="{{ person.avatar }}">
+    
+        {% SVG werkt niet naar behoren %}
+        <svg {{ person.custom.svg }} >
+        <h1> hoi {{ person.name }} </h1>
+
+        <a href=" {{ person.website }} ">
+          <img src="{{ person.avatar }}"  class="githubpic">
+        </a>
+        
         <p> {{ person.birth.date }} </p>
-        <a> {{ person.website }} </a>
         <p> {{ person.nickname }} </p>
+         
         <p> {{ person.bio }} </p>
-        <a> {{ person.custom.picture1 }} </a>
-        <a class="hidden"> {{ person.custom.picture2 }} </a>
+
+        {% Wanneer je over de profile picture hovert dan verandert het plaatje %}
+
+        <div class="ava">
+          <img src="{{ person.custom.profile-pic1 }}">
+          <img class="hidden" src="{{ person.custom.profile-pic2 }}">
+        </div>
+
+        {% Happy Meal SVG %}
+        <svg {{ person.custom.happy-meal}}>
+
     </article>
 
-    <video width="1920" height="1280" autoplay muted loop playsinline>
-      <source src="" type="video/mp4">
-          Your browser does not support the video tag.
-    </video>
+  <video width="30" height="20" autoplay loop>
+    <source src="assets/vecteezy_aurora-borealis-northern-lights_16191969.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video> 
+
+    <details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
 
 {% render 'partials/foot.liquid' %}
