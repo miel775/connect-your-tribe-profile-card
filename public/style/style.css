@@ -139,6 +139,7 @@ article {
   }
 
   .macbutton {
+    all:initial;
     scale: 2;
     grid-row-start: 2;
     grid-column-start: 3;
@@ -152,11 +153,8 @@ article {
     }
   }
 
-  .mac-animation {
-    display: none;
-  }
 
-  .mac-animation.activate {
+  .mac-animation:hover {
     display: block;
     position: relative;
     z-index: 2;
